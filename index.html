@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Northern Ireland Music Therapy Trust</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-soft: #eef6f6;
+      --text: #16324f;
+      --muted: #5f7287;
+      --border: #d7e3ea;
+      --primary: #0f4c81;
+      --primary-dark: #0b3c65;
+      --accent: #1b9aaa;
+      --donate: #e85d75;
+      --shadow: 0 14px 34px rgba(15, 76, 129, 0.10);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+.hero-visual {
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-graphic {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-graphic img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 34px rgba(15, 76, 129, 0.18));
+}
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 250, 252, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(215, 227, 234, 0.8);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: var(--surface-soft);
+    }
+
+    nav details {
+      position: relative;
+    }
+
+    nav summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 10px 6px;
+      border-radius: 10px;
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      user-select: none;
+      font-weight: 500;
+    }
+
+    nav summary::-webkit-details-marker {
+      display: none;
+    }
+
+    nav summary:hover,
+    nav summary:focus {
+      background: var(--surface-soft);
+    }
+
+    nav details[open] > summary {
+      background: var(--surface-soft);
+    }
+
+    .caret {
+      opacity: 0.65;
+      font-size: 0.9em;
+    }
+
+    nav .menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      min-width: 280px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: var(--shadow);
+      z-index: 50;
+    }
+
+    nav .menu ul {
+      display: block;
+    }
+
+    nav .menu a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 10px;
+    }
+
+    .donate-button {
+      background: var(--donate);
+      color: #fff;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(232, 93, 117, 0.22);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .donate-button:hover,
+    .donate-button:focus {
+      background: #d84b64;
+      transform: translateY(-1px);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 56px 0 34px;
+    }
+
+    .hero-box {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+      background: linear-gradient(135deg, #f8fbfd 0%, #eef6f8 100%);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 44px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      font-size: 0.86rem;
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      max-width: 10ch;
+    }
+
+    .hero p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 58ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      background: #fff;
+    }
+
+    .btn-secondary:hover {
+      background: #f3f8fc;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-circle {
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #7fd3db 0%, #3fa7b5 42%, #0f4c81 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      box-shadow: 0 24px 44px rgba(15, 76, 129, 0.18);
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 4.4rem;
+      line-height: 0.95;
+      margin-bottom: 10px;
+    }
+
+    .hero-stat span {
+      display: block;
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    .hero-badge {
+      position: absolute;
+      right: 18px;
+      top: 28px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 14px;
+      box-shadow: var(--shadow);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .hero-card {
+      position: absolute;
+      left: 8px;
+      bottom: 24px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      max-width: 220px;
+    }
+
+    .hero-card h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .hero-card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    /* Generic sections */
+    section {
+      padding: 28px 0 18px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 0 0 24px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.15;
+    }
+
+    .section-title p {
+      margin: 0 auto;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    /* What's new / cards */
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-image {
+      height: 190px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .feature-body {
+      padding: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      background: #e9f7f8;
+      color: #0a7280;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.24rem;
+      line-height: 1.2;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Services circles / quick links */
+    .quick-services {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .quick-service {
+      text-align: center;
+    }
+
+    .quick-service .circle {
+      width: 132px;
+      height: 132px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      border: 6px solid #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .quick-service h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      line-height: 1.2;
+    }
+
+    .quick-service p {
+      margin: 0 0 12px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .text-link {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* CTA strip */
+    .cta-strip {
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    /* Mixed content block */
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .large-content-card,
+    .stack-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .large-content-card .image {
+      height: 270px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .large-content-card .body,
+    .stack-card .body {
+      padding: 22px;
+    }
+
+    .stack-column {
+      display: grid;
+      gap: 18px;
+    }
+
+    .stack-card {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      min-height: 160px;
+    }
+
+    .stack-card .image {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .stack-card h3,
+    .large-content-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+      line-height: 1.2;
+    }
+
+    .stack-card p,
+    .large-content-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 34px;
+      border-top: 1px solid var(--border);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Placeholder imagery */
+    .img-1 { background-image: url('https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=1200&q=80'); }
+    .img-2 { background-image: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80'); }
+    .img-3 { background-image: url('https://images.unsplash.com/photo-1511949860663-92c5c57d48a7?auto=format&fit=crop&w=1200&q=80'); }
+    .img-4 { background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80'); }
+    .img-5 { background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80'); }
+    .img-6 { background-image: url('https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=1200&q=80'); }
+    .img-7 { background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80'); }
+    .img-8 { background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80'); }
+    .img-9 { background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80'); }
+
+    /* Responsive */
+    @media (max-width: 1080px) {
+      .hero-box,
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .card-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-services {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        width: 100%;
+        align-items: stretch;
+      }
+
+      nav details {
+        width: 100%;
+      }
+
+      nav a,
+      nav summary {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      nav .menu {
+        position: static;
+        margin-top: 6px;
+        box-shadow: none;
+      }
+
+      .hero-box {
+        padding: 28px;
+      }
+
+      .hero-visual {
+        min-height: 320px;
+      }
+
+      .hero-circle {
+        width: 280px;
+        height: 280px;
+      }
+
+      .hero-stat strong {
+        font-size: 3.3rem;
+      }
+
+      .card-grid-3,
+      .quick-services,
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .stack-card {
+        grid-template-columns: 1fr;
+      }
+
+      .stack-card .image {
+        min-height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="brand-text">Northern Ireland </br>Music Therapy Trust</div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+
+          <li>
+            <details>
+              <summary>About Us <span class="caret">▾</span></summary>
+              <div class="menu" role="group" aria-label="About Us submenu">
+                <ul>
+                  <li><a href="#about-who-we-are">Who We Are</a></li>
+                  <li><a href="#about-therapists">Our Therapists</a></li>
+                  <li><a href="#about-history">Our History</a></li>
+                  <li><a href="#about-governance">Trustees / Governance</a></li>
+                </ul>
+              </div>
+            </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>Music Therapy? <span class="caret">▾</span></summary>
+              <div class="menu" role="group" aria-label="What is Music Therapy submenu">
+                <ul>
+                  <li><a href="#mt-what-it-is">What Music Therapy Is</a></li>
+                  <li><a href="#mt-how-it-works">How It Works</a></li>
+                  <li><a href="#mt-neuroscience">The Neuroscience of Music Therapy</a></li>
+                  <li><a href="#mt-standards">Professional Standards</a></li>
+                </ul>
+              </div>
+            </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>Services <span class="caret">▾</span></summary>
+              <div class="menu" role="group" aria-label="Services submenu">
+                <ul>
+                  <li><a href="#services-mental-health">Mental Health &amp; Emotional Wellbeing</a></li>
+                  <li><a href="#services-neurodiversity">Neurodiversity &amp; Learning Differences</a></li>
+                  <li><a href="#services-rehab">Neurological &amp; Physical Rehabilitation</a></li>
+                  <li><a href="#services-dementia">Dementia &amp; Older Adult Care</a></li>
+                  <li><a href="#services-addiction">Addiction &amp; Rehabilitation</a></li>
+                  <li><a href="#services-womens-health">Women’s Health</a></li>
+                  <li><a href="#services-workplace">Workplace Wellbeing</a></li>
+                </ul>
+              </div>
+            </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>Training <span class="caret">▾</span></summary>
+              <div class="menu" role="group" aria-label="Training submenu">
+                <ul>
+                  <li><a href="#training-schools">Training for Schools</a></li>
+                  <li><a href="#training-healthcare">Training for Healthcare Professionals</a></li>
+                  <li><a href="#training-workshops">Workshops &amp; Programmes</a></li>
+                </ul>
+              </div>
+            </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>Research <span class="caret">▾</span></summary>
+              <div class="menu" role="group" aria-label="Research submenu">
+                <ul>
+                  <li><a href="#research-overview">Research on Music Therapy</a></li>
+                  <li><a href="#research-insights">Insights &amp; Articles</a></li>
+                  <li><a href="#research-case-studies">Case Studies</a></li>
+                </ul>
+              </div>
+            </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>News <span class="caret">▾</span></summary>
+              <div class="menu" role="group" aria-label="News submenu">
+                <ul>
+                  <li><a href="#news-latest">Latest News</a></li>
+                  <li><a href="#news-upcoming">Upcoming Events</a></li>
+                </ul>
+              </div>
+            </details>
+          </li>
+
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#donate" class="donate-button">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-box">
+          <div class="hero-copy">
+            
+            <h1>Supporting lives through music therapy across Northern Ireland.</h1>
+            <p>
+              We help children, young people, adults, older people, families, schools,
+              healthcare settings, and communities access professional music therapy in a
+              safe, compassionate, and evidence-informed way.
+            </p>
+            <div class="hero-actions">
+              <a href="#services" class="btn-primary">Explore our services</a>
+              <a href="#mt-what-it-is" class="btn-secondary">What is music therapy?</a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-graphic">
+  <img
+    src="images/mascot-homepage-03.png"
+    alt="6000 plus music therapy hours given, with a therapist and mascot illustration"
+  />
+</div>
+            </div>
+
+            
+                     </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>What’s happening at Northern Ireland Music Therapy Trust?</h2>
+          <p>
+            Explore current priorities, service highlights, and ways music therapy is supporting people
+            across different settings and life stages.
+          </p>
+        </div>
+
+        <div class="card-grid-3">
+          <article class="feature-card">
+            <div class="feature-image img-1"></div>
+            <div class="feature-body">
+              <span class="tag">Service spotlight</span>
+              <h3>Mental Health &amp; Emotional Wellbeing</h3>
+              <p>
+                Learn how music therapy can support trauma, anxiety, depression, school anxiety,
+                and emotional expression in a safe therapeutic space.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-image img-2"></div>
+            <div class="feature-body">
+              <span class="tag">Insight</span>
+              <h3>How music supports memory, connection, and communication</h3>
+              <p>
+                Discover how music therapy can support people living with dementia, brain injury,
+                and other neurological or physical conditions.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-image img-3"></div>
+            <div class="feature-body">
+              <span class="tag">Training</span>
+              <h3>Support for schools, staff teams, and care environments</h3>
+              <p>
+                Find out how training and wellbeing programmes can help organisations better understand
+                therapeutic support, communication, and emotional wellbeing.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Explore how our services can support different needs</h2>
+          <p>
+            Our work spans mental health, neurodiversity, rehabilitation, dementia support,
+            women’s health, and workplace wellbeing.
+          </p>
+        </div>
+
+        <div class="quick-services">
+          <article class="quick-service">
+            <div class="circle img-4"></div>
+            <h3>Mental Health</h3>
+            <p>Support for anxiety, depression, trauma, school anxiety, and emotional wellbeing.</p>
+            <a href="#" class="text-link">Learn more</a>
+          </article>
+
+          <article class="quick-service">
+            <div class="circle img-5"></div>
+            <h3>Neurodiversity</h3>
+            <p>Support for autism, ADHD, communication development, and family-based needs.</p>
+            <a href="#" class="text-link">Learn more</a>
+          </article>
+
+          <article class="quick-service">
+            <div class="circle img-6"></div>
+            <h3>Rehabilitation</h3>
+            <p>Music therapy for brain injury, stroke recovery, pain management, and illness recovery.</p>
+            <a href="#" class="text-link">Learn more</a>
+          </article>
+
+          <article class="quick-service">
+            <div class="circle img-7"></div>
+            <h3>Dementia Support</h3>
+            <p>Helping people reconnect, communicate, and engage through familiar and meaningful music.</p>
+            <a href="#" class="text-link">Learn more</a>
+          </article>
+
+          <article class="quick-service">
+            <div class="circle img-8"></div>
+            <h3>Training &amp; Wellbeing</h3>
+            <p>Programmes for schools, organisations, care teams, and employee wellbeing.</p>
+            <a href="#" class="text-link">Learn more</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Looking for a way to support people through music therapy?</h2>
+          <p>
+            Whether you are seeking support, referring someone, or looking to collaborate,
+            we can help you find the right starting point.
+          </p>
+          <p style="margin-top:16px;">
+            <a href="#contact" class="btn-primary">Get in touch</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Insights, evidence, and stories that help people understand our work</h2>
+          <p>
+            Build trust through clear explanations, real examples, and research-informed content.
+          </p>
+        </div>
+
+        <div class="content-layout">
+          <article class="large-content-card">
+            <div class="image img-9"></div>
+            <div class="body">
+              <span class="tag">Research</span>
+              <h3>What is music therapy?</h3>
+              <p>
+                Understand what music therapy involves, how it works, and why it can be a powerful
+                therapeutic approach for communication, emotional expression, connection, and recovery.
+              </p>
+            </div>
+          </article>
+
+          <div class="stack-column">
+            <article class="stack-card">
+              <div class="image img-2"></div>
+              <div class="body">
+                <span class="tag">Evidence</span>
+                <h3>The neuroscience of music therapy</h3>
+                <p>
+                  Explore how music engages memory, emotion, attention, and communication in therapeutic settings.
+                </p>
+              </div>
+            </article>
+
+            <article class="stack-card">
+              <div class="image img-1"></div>
+              <div class="body">
+                <span class="tag">Case study</span>
+                <h3>Stories of impact</h3>
+                <p>
+                  Read how music therapy can support connection, confidence, and wellbeing across diverse settings.
+                </p>
+              </div>
+            </article>
+
+            <article class="stack-card">
+              <div class="image img-3"></div>
+              <div class="body">
+                <span class="tag">News</span>
+                <h3>Latest updates and upcoming activity</h3>
+                <p>
+                  Keep up with events, organisational developments, service news, and new resources.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      Northern Ireland Music Therapy Trust — draft homepage mock-up.
+    </div>
+  </footer>
+
+</body>
+</html>
